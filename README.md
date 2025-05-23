@@ -1,100 +1,120 @@
-🏍️ MotoTrack - Identificação Automática de Motos via Visão Computacional
-Este notebook implementa um protótipo de Visão Computacional utilizando Transfer Learning com o modelo MobileNet pré-treinado.
+# 🏍️ MotoTrack - Identificação Automática de Motos via Visão Computacional
 
-🎯 Objetivos
-Utilizar o modelo MobileNet para identificação automática de motos.
+Este notebook implementa um protótipo de **Visão Computacional** utilizando **Transfer Learning** com o modelo **MobileNet** pré-treinado.
 
-Aplicar em imagens capturadas no contexto do pátio da Mottu.
+---
 
-Demonstrar a aplicação prática da Visão Computacional para melhorar a gestão de frotas.
+## 🎯 Objetivos
 
-✅ O que é Transfer Learning?
-Transfer Learning consiste em reutilizar modelos pré-treinados para resolver novos problemas.
+- ✅ Utilizar o modelo **MobileNet** para identificação automática de motos.
+- ✅ Aplicar em imagens capturadas no contexto do pátio da **Mottu**.
+- ✅ Demonstrar a aplicação prática da **Visão Computacional** para melhorar a **gestão de frotas**.
 
-➡️ Vantagens:
-Poucos dados necessários.
+---
 
-Menor tempo de treinamento.
+## ❓ O que é Transfer Learning?
 
-Alta eficiência.
+**Transfer Learning** consiste em reutilizar modelos pré-treinados para resolver novos problemas.
 
-Neste projeto, usamos o MobileNet pré-treinado no ImageNet, que já reconhece milhares de objetos, incluindo motos.
+### ➡️ Vantagens:
 
-✅ Frameworks e Ferramentas Utilizadas
-🛠️ TensorFlow/Keras
-Escolhido por ser uma das bibliotecas mais robustas e amplamente utilizadas para aplicações de Deep Learning e Visão Computacional.
+- ✅ Poucos dados necessários.
+- ✅ Menor tempo de treinamento.
+- ✅ Alta eficiência.
 
-Permite a fácil utilização de modelos pré-treinados como o MobileNet.
+Neste projeto, usamos o **MobileNet** pré-treinado no **ImageNet**, que já reconhece milhares de objetos, incluindo motos.
 
-Integração ideal com ambientes como o Google Colab.
+---
 
-🛠️ MobileNet
-Leve → ideal para ambientes com recursos computacionais limitados.
+## 🛠️ Frameworks e Ferramentas Utilizadas
 
-Eficaz → mantém alta acurácia em tarefas de classificação de imagens, mesmo com arquitetura compacta.
+### 🔧 TensorFlow/Keras
 
-Contexto:
-O MobileNet é ideal para aplicações embarcadas e móveis, como o monitoramento inteligente de pátios, pois:
+- 💪 Uma das bibliotecas mais robustas para **Deep Learning** e **Visão Computacional**.
+- 🚀 Permite fácil utilização de modelos pré-treinados como o **MobileNet**.
+- ☁️ Integração ideal com ambientes como o **Google Colab**.
 
-Exige menos processamento.
+### 🔧 MobileNet
 
-Executa rapidamente.
+- ⚡ Leve: ideal para ambientes com recursos computacionais limitados.
+- 🎯 Eficaz: mantém alta acurácia em tarefas de classificação de imagens, mesmo com arquitetura compacta.
 
-Pode ser facilmente integrado a sistemas de mapeamento e gestão de frotas, como no caso da Mottu.
+**Contexto:**
 
-🛠️ Matplotlib e NumPy
-Matplotlib → exibição gráfica clara e interpretável dos resultados.
+O **MobileNet** é ideal para aplicações embarcadas e móveis, como o **monitoramento inteligente de pátios**, pois:
 
-NumPy → suporte a operações matriciais e manipulação eficiente de arrays de imagens.
+- 🏎️ Exige menos processamento.
+- ⚡ Executa rapidamente.
+- 🔗 Pode ser facilmente integrado a sistemas de mapeamento e gestão de frotas, como no caso da **Mottu**.
 
-✅ Como Usar este Notebook
-✔️ Passo 1: Baixe o notebook
-Acesse este repositório.
+### 🔧 Matplotlib e NumPy
 
-Faça o download do arquivo .ipynb deste notebook.
+- 📊 **Matplotlib**: exibição gráfica clara e interpretável dos resultados.
+- 🔢 **NumPy**: suporte a operações matriciais e manipulação eficiente de arrays de imagens.
 
-Dica:
-Clique em Code → Download ZIP ou baixe apenas o notebook desejado.
+---
 
-✔️ Passo 2: Importe para o Google Drive
-Acesse o Google Drive.
+## 📝 Como Usar este Notebook
 
-Crie uma pasta (opcional, recomendado para organização).
+### ✅ Passo 1: Baixe o notebook
 
-Faça o upload do notebook .ipynb para o seu Google Drive.
+- 🔗 Acesse este repositório.
+- 📥 Faça o download do arquivo `.ipynb` deste notebook.
 
-✔️ Passo 3: Abra no Google Colab
-No Google Drive, clique com o botão direito no notebook.
+💡 **Dica:** clique em `Code` → `Download ZIP` ou baixe apenas o notebook desejado.
 
-Selecione Abrir com → Google Colab.
+---
 
-O notebook será carregado, pronto para execução.
+### ✅ Passo 2: Importe para o Google Drive
 
-✅ Passos principais dentro do notebook
-📦 Instalação das dependências
-bash
-Copiar
-Editar
+- 📂 Acesse o [Google Drive](https://drive.google.com).
+- 🗂️ Crie uma pasta (opcional, recomendado para organização).
+- 📤 Faça o upload do notebook `.ipynb` para o seu Google Drive.
+
+---
+
+### ✅ Passo 3: Abra no Google Colab
+
+- 🖱️ No Google Drive, clique com o botão direito no notebook.
+- ➡️ Selecione **"Abrir com"** → **"Google Colab"**.
+- ✅ O notebook será carregado, pronto para execução.
+
+---
+
+## 🛠️ Passos principais dentro do notebook
+
+### 📦 Instalação das dependências
+
+```bash
 !pip install tensorflow matplotlib numpy
-📥 Importação das bibliotecas
-python
-Copiar
-Editar
+```
+
+---
+
+### 📥 Importação das bibliotecas
+
+```python
 from tensorflow.keras.applications import MobileNet
 from tensorflow.keras.applications.mobilenet import preprocess_input, decode_predictions
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import matplotlib.pyplot as plt
-⚙️ Carregamento do modelo MobileNet
-python
-Copiar
-Editar
+```
+
+---
+
+### ⚙️ Carregamento do modelo MobileNet
+
+```python
 model = MobileNet(weights='imagenet')
 print("✅ Modelo MobileNet carregado com sucesso!")
-🧩 Definição da função de classificação
-python
-Copiar
-Editar
+```
+
+---
+
+### 🧩 Definição da função de classificação
+
+```python
 def classify_image(img_path, model):
     # Carrega e exibe forma original
     img = image.load_img(img_path, target_size=(224, 224))
@@ -129,66 +149,87 @@ def classify_image(img_path, model):
     print(f"Classificação para {img_path}:")
     for i, (imagenet_id, label, score) in enumerate(decoded_preds):
         print(f"{i+1}. {label}: {score * 100:.2f}%")
-📂 Criando estrutura de diretórios
-python
-Copiar
-Editar
+```
+
+---
+
+### 📂 Criando estrutura de diretórios
+
+```python
 import os
 os.makedirs('data/motos', exist_ok=True)
-📷 Download de imagens de exemplo
-bash
-Copiar
-Editar
+```
+
+---
+
+### 📷 Download de imagens de exemplo
+
+```bash
 !wget https://www.motoo.com.br/fotos/2022/10/960_720/mottu-e-moto-eletrica_01102022_50798_960_720.jpg -O data/motos/moto1.jpg
-📝 Lista de imagens para teste
-python
-Copiar
-Editar
+```
+
+---
+
+### 📝 Lista de imagens para teste
+
+```python
 test_images = ['data/motos/moto1.jpg']
-🚀 Classificação em lote
-python
-Copiar
-Editar
+```
+
+---
+
+### 🚀 Classificação em lote
+
+```python
 for img_path in test_images:
     classify_image(img_path, model)
     print('-' * 50)
-✅ Resultados esperados
-Identificação correta de imagens de motos como motorcycle.
+```
 
-Exibição gráfica das imagens com a Top-1 predição.
+---
 
-Apresentação textual das 5 predições mais prováveis.
+## ✅ Resultados esperados
 
-Tempo médio de execução: inferior a 1 segundo.
+- ✅ Identificação correta de imagens de motos como **"motorcycle"**.
+- ✅ Exibição gráfica das imagens com a **Top-1 predição**.
+- ✅ Apresentação textual das **5 predições mais prováveis**.
+- ✅ Tempo médio de execução: inferior a **1 segundo**.
 
-✅ Discussão dos Resultados
-Pontos positivos:
-Rápido e eficiente.
+---
 
-Classifica bem motos.
+## 🧐 Discussão dos Resultados
 
-Limitações:
-Não identifica a posição exata da moto (sem bounding boxes).
+### ✅ Pontos positivos:
 
-Possível confusão com classes como bicycle.
+- ⚡ Rápido e eficiente.
+- 🎯 Classifica bem motos.
 
-Melhorias futuras:
-Utilizar detecção com YOLOv8.
+### ❗ Limitações:
 
-Criar interface interativa com Streamlit.
+- 🚫 Não identifica a posição exata da moto (**sem bounding boxes**).
+- 🔄 Possível confusão com classes como **"bicycle"**.
 
-Integrar sensores IoT para mapeamento em tempo real.
+### 🔮 Melhorias futuras:
 
-✅ Conclusão
-O MotoTrack demonstrou com sucesso a aplicação de Transfer Learning com MobileNet para a identificação automática de motos.
+- 🛠️ Utilizar detecção com **YOLOv8**.
+- 🖥️ Criar interface interativa com **Streamlit**.
+- 📡 Integrar sensores **IoT** para mapeamento em tempo real.
 
-Próximos passos:
-Adicionar detecção com bounding boxes.
+---
 
-Implementar interface interativa.
+## ✅ Conclusão
 
-Integrar sensores IoT.
+O **MotoTrack** demonstrou com sucesso a aplicação de **Transfer Learning** com **MobileNet** para a **identificação automática de motos**.
 
-🚦 Resumindo:
-✅ Baixe → ✅ Importe → ✅ Abra → ✅ Execute!
+### 🔜 Próximos passos:
+
+- ➕ Adicionar detecção com **bounding boxes**.
+- ➕ Implementar interface interativa.
+- ➕ Integrar sensores **IoT**.
+
+---
+
+## 🚦 Resumindo
+
+✅ **Baixe** → ✅ **Importe** → ✅ **Abra** → ✅ **Execute!**
 
