@@ -163,19 +163,16 @@ Tempo médio de execução: inferior a 1 segundo.
 
 ✅ Discussão dos Resultados
 Pontos positivos:
-
 Rápido e eficiente.
 
 Classifica bem motos.
 
 Limitações:
-
 Não identifica a posição exata da moto (sem bounding boxes).
 
 Possível confusão com classes como bicycle.
 
 Melhorias futuras:
-
 Utilizar detecção com YOLOv8.
 
 Criar interface interativa com Streamlit.
@@ -186,7 +183,6 @@ Integrar sensores IoT para mapeamento em tempo real.
 O MotoTrack demonstrou com sucesso a aplicação de Transfer Learning com MobileNet para a identificação automática de motos.
 
 Próximos passos:
-
 Adicionar detecção com bounding boxes.
 
 Implementar interface interativa.
@@ -195,3 +191,4 @@ Integrar sensores IoT.
 
 🚦 Resumindo:
 ✅ Baixe → ✅ Importe → ✅ Abra → ✅ Execute!
+
