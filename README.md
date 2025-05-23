@@ -186,14 +186,13 @@ Agora podemos realizar testes com imagens.
 Organizamos imagens em:
 
 - `data/motos/` → imagens de motos.
-- `data/outros/` → imagens de outros objetos.
 
 ```python
 import os
 os.makedirs('data/motos', exist_ok=True)
 ```
 
-✅ Diretórios criados com sucesso.
+✅ Diretório criado com sucesso.
 
 Agora vamos baixar algumas imagens de exemplo.
 
@@ -205,8 +204,8 @@ Baixamos imagens diretamente da internet para as pastas criadas.
 
 **Exemplo:**
 
-- Moto de luxo.
-- Outras categorias como carro e pessoa.
+- Moto de aluguel.
+
 
 ```bash
 # Moto de aluguel
